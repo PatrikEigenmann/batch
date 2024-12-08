@@ -1,5 +1,5 @@
 @echo off
-:: --------------------------------------------------------------------------------------------------------
+:: ----------------------------------------------------------------------------------------------------------
 :: The cdget.cmd batch file exemplifies streamlined and efficient project setup by automating the creation
 :: and population of development directories with the necessary templates. This utility not only enhances
 :: productivity but also ensures consistency and organization across various programming languages.
@@ -7,10 +7,10 @@
 :: This batch file simplifies the initial setup process for new projects, enabling developers to focus on
 :: coding rather than manual setup tasks. By adopting the cdget.cmd batch file, you are investing in a more
 :: organized, efficient, and productive workflow.
-:: --------------------------------------------------------------------------------------------------------
+:: ----------------------------------------------------------------------------------------------------------
 :: author:     Patrik Eigenmann
 :: email:      p.eigenmann@gmx.net
-:: --------------------------------------------------------------------------------------------------------
+:: ----------------------------------------------------------------------------------------------------------
 :: Change Log:
 :: Sat 2023-12-30 File created                                                                  Version 00.01
 :: Sat 2023-12-30 Python file added                                                             Version 00.02
@@ -23,7 +23,9 @@
 :: Sat 2023-12-30 C/C++ Header file added                                                       Version 00.09
 :: Wed 2024-11-13 Description added.                                                            Version 00.10
 :: Thu 2024-11-14 Added the Java starter program.                                               Version 00.11
-:: --------------------------------------------------------------------------------------------------------
+:: Thu 2024-12-05 C sample file added.                                                          Version 00.12
+:: Thu 2024-12-05 Makefile added.                                                               Version 00.13
+:: ----------------------------------------------------------------------------------------------------------
 
 setlocal
 
@@ -60,6 +62,11 @@ if "%language%"=="-c" (
     copy "D:\Development\templates\c_template.c" "%filename%.c"
 )
 
+:: C section
+if "%language%"=="-cs" (
+    copy "D:\Development\templates\c__sample_template.c" "%filename%.c"
+)
+
 :: C++ section
 if "%language%"=="-cpp" (
     copy "D:\Development\templates\cpp_template.cpp" "%filename%.cpp"
@@ -73,6 +80,11 @@ if "%language%"=="-h" (
 :: Java starter C program section
 if "%language%"=="-cj" (
     copy "D:\Development\templates\c_java_template.c" "%filename%.c"
+)
+
+:: Java starter C program section
+if "%language%"=="-mk" (
+    copy "D:\Development\templates\makefile_template.makefile" "%filename%.makefile"
 )
 
 :: Batch section
